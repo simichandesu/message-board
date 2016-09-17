@@ -1,11 +1,11 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:edit, :update, :destroy]
   
-   def index
+  def index
     @message = Message.new
     # Messageを全て取得する。
     @messages = Message.all
-  end
+  end 
 
   def create
     @message = Message.new(message_params)
@@ -38,7 +38,7 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:name, :body)
+    params.require(:message).permit(:name, :body, :age)
   end
   ## ここまで
 
